@@ -1,0 +1,23 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Your Written Exam Results</h2>
+    <div class="row">
+        {% for student_exam in student_exams %}
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ student_exam.exam.title }}</h5>
+                    <p class="card-text">Date Attempted: {{ student_exam.start_time|date:"F d, Y H:i" }}</p>
+                    <a href="{% url 'student_panel:exam_results' student_exam.exam.id %}" class="btn btn-primary">
+                        View Results
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No completed exams found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

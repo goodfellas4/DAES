@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ exam.title }}</title>
+</head>
+<body>
+    <h1>{{ exam.title }}</h1>
+    <h3>Questions:</h3>
+    <ul>
+        {% for question in exam.questions.all %}
+            <li>
+                <strong>{{ question.question_text }}</strong><br>
+                <p><em>Ideal Answer:</em> {{ question.ideal_answer }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>

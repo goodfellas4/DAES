@@ -1,0 +1,6 @@
+*.safetensors filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
+DAES/t5-small/model.safetensors filter=lfs diff=lfs merge=lfs -text
+exam_system/eval/Lib/site-packages/torch/lib/torch_cpu.dll filter=lfs diff=lfs merge=lfs -text
+exam_system/eval/Lib/site-packages/torch/lib/dnnl.lib filter=lfs diff=lfs merge=lfs -text

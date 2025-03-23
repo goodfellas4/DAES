@@ -1,0 +1,20 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Submit Exam - {{ exam.title }}{% endblock %}
+
+{% block content %}
+    <h1>Submit Exam: {{ exam.title }}</h1>
+
+    {% if missing_answers > 0 %}
+        <p>You have not answered {{ missing_answers }} question(s). Would you like to submit the exam anyway?</p>
+    {% else %}
+        <p>You have answered all questions. You can now submit your exam.</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Submit Exam</button>
+    </form>
+
+    <a href="{% url 'student_panel:start_exam' exam.id %}" class="btn btn-secondary">Go Back to Exam</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+
+  <h1 class="text-center">Admin Dashboard</h1>
+
+  <h2 class="mt-4">Upload Exam JSON</h2>
+  <form method="POST" enctype="multipart/form-data" class="p-3 border rounded bg-light">
+    {% csrf_token %}
+    <label for="json_file" class="form-label">Upload JSON:</label>
+    <input type="file" name="json_file" id="json_file" class="form-control" required>
+    <button type="submit" class="btn btn-primary mt-3">Upload Exam</button>
+  </form>
+
+  <hr>
+  <h2 class="mt-4">Exams Created</h2>
+  <ul class="list-group">
+    {% for exam in exams %}
+      <li class="list-group-item d-flex justify-content-between">
+        {{ exam.title }}
+        <div>
+          <a href="{% url 'view_exam' exam.id %}" class="btn btn-sm btn-info">View</a>
+          <form action="{% url 'delete_exam' exam.id %}" method="POST" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </div>
+      </li>
+    {% empty %}
+      <li class="list-group-item">No exams created yet.</li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+  <a href="{% url 'logout' %}" class="btn btn-warning mt-4">Logout</a>
+  <br><br>
+  <a href="{% url 'list_students' %}" class="btn btn-secondary">View Students</a>
+  
+{% endblock %}
+
+<!-- JavaScript to reload the page if accessed via the back button -->
+<script>
+  if (performance.navigation.type === 2) {
+    window.location.reload(true);
+  }
+</script>

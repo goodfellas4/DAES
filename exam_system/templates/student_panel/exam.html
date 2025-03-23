@@ -1,0 +1,89 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}{{ exam.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">{{ exam.title }}</h1>
+
+    <!-- Student Info -->
+    <div class="alert alert-info text-center">
+        <strong>Student Name:</strong> {{ request.user.name }} <br>
+        <strong>Registration Number:</strong> {{ request.user.registration_number }}
+    </div>
+
+    {% if current_question %}
+        <div class="question-container p-4 border rounded bg-light shadow-sm">
+            <div class="question-info mb-3">
+                <span><strong>Question {{ question_index }} of {{ total_questions }}</strong></span>
+            </div>
+            <p class="question-text mb-3">{{ current_question.question_text }}</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <textarea name="answer" id="answer" class="answer-textarea form-control" placeholder="Your answer..." required>{{ request.POST.answer }}</textarea><br>
+                <div class="button-container text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                    <button type="button" id="voice_input" class="btn btn-secondary">Speak Your Answer</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Timer -->
+        <div class="text-center mt-4">
+            <h3>Time Remaining: <span id="timer">{{ remaining_time }}</span></h3>
+        </div>
+
+        <script>
+            // Timer Logic
+            var remainingTime = {{ remaining_time }}; // Time from Django (in seconds)
+            var timerDisplay = document.getElementById('timer');
+
+            function updateTimer() {
+                var minutes = Math.floor(remainingTime / 60);
+                var seconds = remainingTime % 60;
+                seconds = seconds < 10 ? '0' + seconds : seconds; // Two-digit formatting
+                timerDisplay.textContent = minutes + ":" + seconds;
+
+                if (remainingTime <= 0) {
+                    clearInterval(timer);
+                    alert("Time is up! Submitting your exam.");
+                    window.location.href = "{% url 'student_panel:submit_exam' exam.id %}";
+                } else {
+                    remainingTime--;
+                }
+            }
+
+            // Start countdown timer
+            var timer = setInterval(updateTimer, 1000);
+
+            // Voice Input with SpeechRecognition
+            document.getElementById("voice_input").addEventListener("click", function () {
+                var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = 'en-US';
+
+                recognition.onresult = function (event) {
+                    var transcript = event.results[0][0].transcript;
+                    var answerField = document.getElementById("answer");
+                    answerField.value += (answerField.value ? " " : "") + transcript; // Append text instead of replacing
+                };
+
+                recognition.onerror = function (event) {
+                    console.error("Speech Recognition Error: ", event.error);
+                    alert("An error occurred while trying to record your speech. Please try again.");
+                };
+
+                recognition.onend = function () {
+                    console.log("Speech recognition has stopped.");
+                };
+
+                recognition.start();
+            });
+        </script>
+
+    {% else %}
+        <p class="text-center">No questions available for this exam.</p>
+    {% endif %}
+    <a href="{% url 'student_panel:student_home' %}" class="btn btn-link">Back to Home</a>
+</div>
+{% endblock %}

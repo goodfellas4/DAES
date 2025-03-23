@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="main-container mx-auto" style="max-width: 500px;">
+    <h2 class="text-center mb-4">Student Signup</h2>
+
+    <form method="POST" class="p-4 border rounded bg-light shadow-sm">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="id_registration_number" class="form-label">Reg Number:</label>
+            {{ form.registration_number }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_name" class="form-label">Full Name:</label>
+            {{ form.name }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_course" class="form-label">Course:</label>
+            {{ form.course }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password" class="form-label">Password:</label>
+            {{ form.password }}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Signup</button>
+    </form>
+
+    <p class="mt-3 text-center">
+        Already registered? <a href="{% url 'student_panel:student_login' %}" class="text-primary">Login here</a>.
+    </p>
+</div>
+{% endblock %}

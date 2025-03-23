@@ -1,0 +1,49 @@
+{
+  "exam_title": "Computer Science Fundamentals Exam",
+  "questions": [
+    {
+      "question_text": "What is a cache in computing?",
+      "ideal_answer": "A cache is a high-speed storage layer that stores frequently accessed data temporarily to reduce retrieval times. It minimizes the need to access slower storage systems like hard drives or remote servers. Common examples include web browser caches and CPU caches."
+    },
+    {
+      "question_text": "What is machine learning?",
+      "ideal_answer": "Machine learning is a field of artificial intelligence where algorithms learn patterns from data to make predictions or decisions. It automates tasks that traditionally require human intelligence, such as image recognition and natural language understanding. Machine learning systems improve as they are exposed to more data over time."
+    },
+    {
+      "question_text": "What is blockchain technology?",
+      "ideal_answer": "Blockchain is a decentralized, immutable ledger used to record transactions across multiple nodes in a network. It ensures transparency, security, and trust by using cryptographic techniques. Blockchains are widely used in cryptocurrencies and supply chain management."
+    },
+    {
+      "question_text": "What is the difference between HTTP and HTTPS?",
+      "ideal_answer": "HTTP (HyperText Transfer Protocol) is used for transferring data over the web but does not secure the data. HTTPS (HTTP Secure) encrypts the data using TLS/SSL protocols, ensuring secure communication between the client and server. HTTPS is critical for protecting sensitive information like passwords and credit card details."
+    },
+    {
+      "question_text": "What is a load balancer?",
+      "ideal_answer": "A load balancer distributes incoming network or application traffic across multiple servers to ensure reliability and efficiency. It helps prevent server overloads and improves the performance of web services. Load balancing is essential for scalability and fault tolerance in distributed systems."
+    },
+    {
+      "question_text": "What is a linked list?",
+      "ideal_answer": "A linked list is a linear data structure consisting of nodes where each node contains data and a reference to the next node. Unlike arrays, linked lists do not require contiguous memory locations. They are efficient for dynamic memory allocation but slower for direct element access."
+    },
+    {
+      "question_text": "What is virtualization?",
+      "ideal_answer": "Virtualization is the creation of virtual versions of physical resources, such as servers, storage devices, and networks. It enables efficient utilization of hardware by running multiple virtual machines on a single physical machine. This technology underpins cloud computing and modern IT infrastructure."
+    },
+    {
+      "question_text": "What is cloud storage?",
+      "ideal_answer": "Cloud storage allows users to store and access data over the internet instead of on a local storage device. It provides scalability, backup solutions, and accessibility from anywhere. Popular cloud storage providers include Google Drive, Dropbox, and Amazon S3."
+    },
+    {
+      "question_text": "What is a neural network in AI?",
+      "ideal_answer": "Neural networks are computational models inspired by the human brain, consisting of layers of interconnected nodes. Each node processes input data and passes it to the next layer. Neural networks are used in tasks such as speech recognition, image classification, and autonomous driving."
+    },
+    {
+      "question_text": "What is dynamic programming?",
+      "ideal_answer": "Dynamic programming is an optimization technique that solves problems by breaking them into smaller overlapping subproblems. It stores the solutions of subproblems to avoid redundant calculations. It is widely used in problems like shortest path algorithms and sequence alignment in bioinformatics."
+    },
+    {
+      "question_text": "What is a microcontroller?",
+      "ideal_answer": "A microcontroller is a compact integrated circuit designed to govern a specific operation in an embedded system. It includes a processor, memory, and input/output peripherals on a single chip. Microcontrollers are commonly used in IoT devices, appliances, and automotive systems."
+    }
+  ]
+}

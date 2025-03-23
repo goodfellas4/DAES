@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Results for {{ student.name }}</h2>
+    <h5 class="text-center text-muted">Registration No: {{ student.registration_number }}</h5>
+    
+    {% for result in exam_results %}
+    <div class="card my-3">
+        <div class="card-header">
+            <h5 class="mb-0">{{ result.exam.title }}</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Score:</strong> {{ result.total_score }}</p>
+            <hr>
+            <h6>Detailed Answers:</h6>
+            <ul>
+                {% for answer in result.answers %}
+                <li>
+                    <strong>Question:</strong> {{ answer.question.question_text }} <br>
+                    <strong>Response:</strong> {{ answer.response }} <br>
+                    <strong>Score:</strong> {{ answer.score }}
+                </li>
+                <hr>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No attempted exams found.</p>
+    {% endfor %}
+</div>
+{% endblock %}

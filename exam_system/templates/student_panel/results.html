@@ -1,0 +1,24 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h2>Exam Results for {{ exam.title }}</h2>
+
+<table border="1">
+    <tr>
+        <th>Question</th>
+        <th>        </th>
+        <th>Score</th>
+    </tr>
+    {% for answer in student_answers %}
+    <tr>
+        <td>{{ answer.question.question_text }}</td>
+        <td>   -     </td>
+        <td>{{ answer.score }} / 10</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Total Score: {{ total_score }} / {{ total_marks }}</h3>
+
+<a href="{% url 'student_panel:student_home' %}">Back to Home</a>
+{% endblock %}

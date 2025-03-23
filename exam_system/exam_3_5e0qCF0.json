@@ -1,0 +1,49 @@
+{
+  "exam_title": "C Programming Fundamentals Exam",
+  "questions": [
+    {
+      "question_text": "What is C programming?",
+      "ideal_answer": "C is a general-purpose, procedural programming language known for its efficiency and flexibility. It is widely used for system programming, embedded systems, and applications requiring low-level hardware interaction."
+    },
+    {
+      "question_text": "What are the key features of C?",
+      "ideal_answer": "C provides features like structured programming, low-level memory manipulation, portability, and a rich set of operators. It forms the foundation of many modern programming languages."
+    },
+    {
+      "question_text": "What is the significance of the main() function in C?",
+      "ideal_answer": "The main() function serves as the entry point for program execution in C. It is where the program begins and ends, and it typically returns an integer value indicating success or failure."
+    },
+    {
+      "question_text": "What is a pointer in C?",
+      "ideal_answer": "A pointer is a variable that stores the memory address of another variable. It allows direct access to memory, enabling efficient data manipulation and dynamic memory allocation."
+    },
+    {
+      "question_text": "What are header files in C?",
+      "ideal_answer": "Header files contain function declarations, macros, and type definitions. They allow code reuse and modular programming by providing interfaces to the implementation of libraries."
+    },
+    {
+      "question_text": "What is the role of the printf and scanf functions?",
+      "ideal_answer": "printf is used for formatted output to the console, while scanf is used for formatted input. These functions are part of the standard I/O library in C."
+    },
+    {
+      "question_text": "How does dynamic memory allocation work in C?",
+      "ideal_answer": "C provides functions like malloc, calloc, realloc, and free to allocate and deallocate memory at runtime. These functions are part of the stdlib.h library."
+    },
+    {
+      "question_text": "What are arrays in C?",
+      "ideal_answer": "An array is a collection of elements of the same data type stored in contiguous memory locations. Arrays allow efficient storage and manipulation of large amounts of data."
+    },
+    {
+      "question_text": "What is a structure in C?",
+      "ideal_answer": "A structure is a user-defined data type that groups related variables of different types under one name. It is useful for organizing complex data."
+    },
+    {
+      "question_text": "What is the difference between ++i and i++ in C?",
+      "ideal_answer": "++i increments the value of i before its current value is used in an expression, while i++ increments it after its current value is used."
+    },
+    {
+      "question_text": "What is the purpose of the sizeof operator?",
+      "ideal_answer": "The sizeof operator determines the memory size, in bytes, of a data type or variable at compile time. It is commonly used for memory allocation and optimization."
+    }
+  ]
+}

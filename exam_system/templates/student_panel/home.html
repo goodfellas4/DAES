@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5" style="min-height: 500px;">
+    <h2 class="text-center">Student Dashboard</h2>
+
+    <!-- Display Student Information -->
+    <div class="mb-4">
+        <h4>Welcome, {{ student.name }}</h4>
+        <p><strong>Registration Number:</strong> {{ student.registration_number }}</p>
+        <p><strong>Course:</strong> {{ student.course }}</p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="{% url 'student_panel:written_exam_results' %}" class="btn btn-info">View Written Exam Results</a>
+        <a href="{% url 'student_panel:student_logout' %}" class="btn btn-danger">Logout</a>
+    </div>
+
+    <h3 class="mt-4">Available Exams</h3>
+    <ul class="list-group">
+        {% for exam in exams %}
+            <li class="list-group-item d-flex justify-content-between">
+                {{ exam.title }}
+                {% if exam.id in attempted_exams %}
+                    <button class="btn btn-secondary btn-sm" disabled>Attempted</button>
+                {% else %}
+                    <!-- Directly Navigate to Exam Page -->
+                    <a href="{% url 'student_panel:start_exam' exam.id %}" class="btn btn-primary btn-sm">Start Exam</a>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li class="list-group-item">No exams available.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

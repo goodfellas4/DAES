@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Students List</h2>
+    <div class="row">
+        {% for student in students %}
+        <div class="col-md-4">
+            <div class="card mb-3 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ student.name }}</h5>
+                    <p class="card-text"><strong>Reg No:</strong> {{ student.registration_number }}</p>
+                    <p class="card-text"><strong>Course:</strong> {{ student.course }}</p>
+                    <a href="{% url 'student_results' student.id %}" class="btn btn-primary">View Results</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No students found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="main-container mx-auto" style="max-width: 400px;">
+    <h2 class="text-center mb-4">Admin Login</h2>
+
+    <form method="POST" class="p-4 border rounded bg-light shadow-sm">
+        {% csrf_token %}
+        
+        <!-- Render Django form fields -->
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Username</label>
+            {{ form.username }}
+        </div>
+        <div class="mb-3">
+            <label for="id_password" class="form-label">Password</label>
+            {{ form.password }}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+</div>
+{% endblock %}
+
+

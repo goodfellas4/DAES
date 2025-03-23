@@ -1,0 +1,49 @@
+{
+  "exam_title": "Python Programming Fundamentals Exam",
+  "questions": [
+    {
+      "question_text": "What is Python?",
+      "ideal_answer": "Python is a high-level, interpreted programming language known for its readability and simplicity. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming."
+    },
+    {
+      "question_text": "What are Python's key features?",
+      "ideal_answer": "Python offers features like dynamic typing, garbage collection, extensive standard libraries, and support for modules and packages. It is cross-platform and widely used in fields like data science, web development, and automation."
+    },
+    {
+      "question_text": "What is a Python virtual environment?",
+      "ideal_answer": "A Python virtual environment is an isolated workspace for projects that allows you to manage dependencies and avoid conflicts with other projects' packages. Tools like venv or virtualenv create these environments."
+    },
+    {
+      "question_text": "What are Python decorators?",
+      "ideal_answer": "Decorators are functions that modify the behavior of another function or method. They are often used for tasks like logging, access control, and memoization."
+    },
+    {
+      "question_text": "What is the difference between a list and a tuple in Python?",
+      "ideal_answer": "Lists are mutable, meaning their elements can be changed after creation, whereas tuples are immutable and cannot be modified. Tuples are faster and used for fixed collections of data."
+    },
+    {
+      "question_text": "What are Python comprehensions?",
+      "ideal_answer": "Comprehensions, like list, dictionary, or set comprehensions, provide a concise way to create collections by iterating over sequences and applying conditions or transformations."
+    },
+    {
+      "question_text": "What is the Global Interpreter Lock (GIL)?",
+      "ideal_answer": "The GIL is a mutex in CPython that ensures only one thread executes Python bytecode at a time, simplifying memory management but limiting parallel execution in multithreaded programs."
+    },
+    {
+      "question_text": "How does Python handle memory management?",
+      "ideal_answer": "Python uses automatic memory management through garbage collection and reference counting. The gc module helps in detecting and managing unused objects."
+    },
+    {
+      "question_text": "What are Python lambda functions?",
+      "ideal_answer": "Lambda functions are anonymous functions defined using the lambda keyword. They are limited to a single expression and are often used for short-lived operations."
+    },
+    {
+      "question_text": "What is the difference between is and == in Python?",
+      "ideal_answer": "The is operator checks for object identity (whether two references point to the same object), while == checks for value equality (whether two objects have the same data)."
+    },
+    {
+      "question_text": "What are Python's data types?",
+      "ideal_answer": "Python supports various data types like integers, floats, strings, lists, tuples, dictionaries, sets, and more. It also supports custom data types through classes."
+    }
+  ]
+}

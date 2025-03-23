@@ -1,0 +1,108 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Welcome to the Smart Evaluation System{% endblock %}
+
+{% block content %}
+<style>
+    /* Hero Section */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #e3f2fd, #ffffff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    /* Background Image */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://source.unsplash.com/1600x900/?education,learning') center/cover no-repeat;
+        opacity: 0.2;
+    }
+
+    /* Glassmorphism Box */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(15px);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #007bff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn-custom {
+        padding: 12px 25px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+    }
+
+    .btn-admin {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+    }
+
+    .btn-student {
+        background: linear-gradient(135deg, #28a745, #1e7e34);
+        color: white;
+    }
+
+    .btn-custom:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to the Smart Evaluation System</h1>
+        <p>AI-powered assessment and performance tracking platform</p>
+
+        <div class="mt-4">
+            <a href="{% url 'admin_login' %}" class="btn btn-custom btn-admin mx-3">Admin</a>
+            <a href="{% url 'student_panel:student_login' %}" class="btn btn-custom btn-student mx-3">Student</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
