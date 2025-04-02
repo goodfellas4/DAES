@@ -58,7 +58,6 @@ Ensure you have the following installed:
    ```bash
    python manage.py runserver
    ```
-7. Open `http://127.0.0.1:8000/` in your browser.
 
 ## Usage
 ### Admin Panel
