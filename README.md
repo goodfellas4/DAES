@@ -87,10 +87,18 @@ Ensure you have the following installed:
 - **CSRF Protection & Password Hashing**: Ensures security best practices.
 
 ## Contributors
-- **P. A. Mohammed Fayad** (Lead Developer)
-- **Aadhithyanarayanan V A** (NLP Model, API Deployment)
-- **Ajay Antu** (Blockchain & Smart Contract Integration)
-- **Ashna Saju** (Frontend & IPFS Storage Integration)
+- **P. A. Mohammed Fayad** (Develop the machine learning-based answer evaluation system using TF-IDF, LDA, SBERT, and T5 models.
+Implement algorithms to compute similarity scores and assign final grades.
+)
+- **S Nandhagopan** (Develop the student panel for authentication, exam participation, and answer submissions.
+Implement the admin panel to manage exams, student registrations, and monitor exam activity.
+)
+- **Mohammed Shamil Abdul Salam** (Design and implement database models to store students, exams, answers, and scores.
+Develop API endpoints using Django DRF for handling exam questions, answer submissions, and score retrieval.
+)
+- **Mohammed Irshan CT** (Develop an automated JavaScript-based exam timer that ensures timely submission of responses.
+Implement DeepSpeech, Speech-to-Text API for converting spoken answers into text.
+)
 
 ## License
 This project is licensed under the MIT License.
