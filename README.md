@@ -111,4 +111,3 @@ This project is licensed under the MIT License.
 ---
 
 For queries or contributions, please raise an issue or pull request in the repository.
-
